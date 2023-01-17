@@ -18,7 +18,18 @@
                 <img src="images/legocart.svg" alt="Handlekurv">
             </figure>
         </header>
-
+        <section name="cart" id="cartviuw">
+            <h2>Din handlevogn</h2>
+            <ul>
+                <li>
+                    <span class="titel">Dragon Zane</span>
+                    <span class="price">89,-</span>
+                    <span class="quantity">x1</span>
+                    <button class="delete">X</button>
+                </li>
+            </ul>
+            <p>Totalt kr. <span class="total">0,-</span></p>
+        </section>
         <nav>
             <a href="city.html">City</a>
             <a class="active" href="ninjago.html">Ninjago</a>
@@ -34,7 +45,7 @@
                 <a href="ninjago.html">Ninjago</a>
                 <h3>Dragon Zane</h3>
                 <span class="price">Kr.89,-</span>
-                <button class="">Legg i handlekurv</button>
+                <button onclick="addToCart('Dragon Zane', 89)">Legg i handlekurv</button>
             </article>
 
             <article class="product-card">
