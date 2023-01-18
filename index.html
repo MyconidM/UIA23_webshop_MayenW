@@ -13,20 +13,17 @@
             <a href="index.html">
                 <img src="images/LD_logo.svg" alt="LEGO-DUDES">
             </a>
-            <figure id="cart">
-                <span class="label">2</span>
+            <figure id="cart" onclick="toggleCart()">
+                <span class="label">0</span>
                 <img src="images/legocart.svg" alt="Handlekurv">
             </figure>
         </header>
-        <section name="cart" id="cartviuw">
-            <h2>Din handlevogn</h2>
+        <section name="cart" id="cartviuw" class="hidden">
+            <h3>Din handlevogn</h3>
             <ul>
                 <li>
-                    <span class="titel">Dragon Zane</span>
-                    <span class="price">89,-</span>
-                    <span class="quantity">x1</span>
-                    <button class="delete">X</button>
-                </li>
+                    Du har ingen varer i handlevognen.
+                </li> 
             </ul>
             <p>Totalt kr. <span class="total">0,-</span></p>
         </section>

@@ -192,6 +192,10 @@ span.titel {
     width: calc(100%-9rem);
 }
 
+span.price, span.quantity {
+    width: 3rem;
+}
+
 button.delete {
     width: 2rem;
     height: 2rem;
@@ -199,4 +203,9 @@ button.delete {
     background-color: var(--red);
     border: none;
     color: var(--white);
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
 }
