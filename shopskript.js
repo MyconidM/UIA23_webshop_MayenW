@@ -1,4 +1,5 @@
 let cart = []
+let priceTotal = 0;
 
 function addToCart(title, price) {
     cart.push({productTitle: title, productPrice: price, productQuantity: 1})
@@ -7,22 +8,45 @@ function addToCart(title, price) {
     renderCart()
     //SÅ må vi oppdatere label mer antall prdukter
     document.querySelector("#cart .label").innerHTML = cart.length
+    document.querySelector("#cartviuw").classList.remove("hidden")
+
+    priceTotal = 0;
+    //https://linuxhint.com/calculate-sum-of-array-of-objects-javascript/
+    for (let i = 0; i< cart.length; i++){
+        priceTotal += cart[i].productPrice
+    }
+    console.log(priceTotal)
+    document.querySelector(".total").innerHTML = priceTotal + ",-"
+}
+
+function deleteProduct(product) {
+    //cart.map()
+    /*for(let i = 0; i < cart.length; i++){
+        if(cart[i] === cart[product]) {
+
+        }
+    }*/
+    cart.splice(product, 1)
+    renderCart()
 }
 
 function renderCart() {
     //Tom variabel for å bygge html for produkter
     let listHTML = ""
+    
     //Gå gjennom cart arrayen, lag <li> for hvert produkt
-    cart.map(prod => listHTML +=`<li>
+    cart.map((prod, index) => listHTML +=`<li>
         <span class="titel">${prod.productTitle}</span>
         <span class="price">${prod.productPrice}</span>
         <span class="quantity">${prod.productQuantity}</span>
-        <button class="delete">X</button>
+        <button onclick="deleteProduct(${index})" class="delete">X</button>
     </li>`)
     //Bruke en selector for å finne riktig <ul>, og skrive in listHTML: 
+    
     document.querySelector("#cartviuw ul").innerHTML = listHTML
 }
 
 function toggleCart() {
     document.querySelector("#cartviuw").classList.toggle("hidden")
 }
+
